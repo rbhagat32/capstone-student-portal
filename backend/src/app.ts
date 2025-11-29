@@ -1,15 +1,15 @@
-import express, { type Request, type Response } from "express";
-import { configDotenv } from "dotenv";
-import cors from "cors";
-import morgan from "morgan";
-import cookieParser from "cookie-parser";
-import { errorHandler } from "@/middlewares/error-handler.js";
 import { connectDB } from "@/config/db.js";
-import { authRouter } from "@/routes/auth.js";
-import { studentRouter } from "@/routes/student.js";
-import { doctorRouter } from "@/routes/doctor.js";
+import { errorHandler } from "@/middlewares/error-handler.js";
 import { appointmentRouter } from "@/routes/appointment.js";
+import { authRouter } from "@/routes/auth.js";
 import { availabilityRouter } from "@/routes/availability.js";
+import { doctorRouter } from "@/routes/doctor.js";
+import { studentRouter } from "@/routes/student.js";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import { configDotenv } from "dotenv";
+import express, { type Request, type Response } from "express";
+import morgan from "morgan";
 
 const app = express();
 configDotenv({ path: ".env", quiet: true });
@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.get("/", (_req: Request, res: Response) => {
-  res.status(200).send("This app was created using npx create-types-backend@latest !");
+  res.status(200).send("This app was created using `npx create-types-backend`");
 });
 
 app.use("/api/auth", authRouter);

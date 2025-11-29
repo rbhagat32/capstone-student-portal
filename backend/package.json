@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "This app was created using npx create-types-backend@latest",
+  "description": "This app was created using `npx create-types-backend`",
   "main": "dist/app.js",
   "type": "module",
   "scripts": {
