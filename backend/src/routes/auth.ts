@@ -4,9 +4,9 @@ import { checkToken, login, logout, getLoggedInStudent } from "@/controllers/aut
 
 const router = express.Router();
 
+router.post("/login", login); // done
 router.get("/check", checkToken);
-router.post("/login", login);
-router.post("/logout", logout);
 router.get("/get-student", isLoggedIn, getLoggedInStudent);
+router.post("/logout", logout);
 
 export { router as authRouter };
