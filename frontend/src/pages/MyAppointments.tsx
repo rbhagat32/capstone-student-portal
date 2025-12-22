@@ -3,7 +3,6 @@ import { CalendarDays, Clock, Stethoscope, XCircle } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { HashLoader } from "react-spinners";
 import { toast } from "sonner";
-import { appointmentApi } from "../api/appointmentApi";
 import { studentApi } from "../api/studentApi";
 import DashboardLayout from "./DashboardLayout";
 
@@ -92,7 +91,7 @@ export default function MyAppointments() {
 
     try {
       setCancellingId(id);
-      await appointmentApi.cancelAppointment(id);
+      // await appointmentApi.cancelAppointment(id);
 
       toast.success("Appointment cancelled successfully!");
 

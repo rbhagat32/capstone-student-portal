@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import { authApi } from "../api/authApi";
 import { getAvatarURL } from "../utils/avatar";
 
 export default function Navbar() {
   const [student, setStudent] = useState<any>(null);
-  const location = useLocation();
 
   // Dynamic title based on page
   const pageTitle = (() => {

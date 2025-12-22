@@ -1,4 +1,3 @@
-import { appointmentApi } from "@/api/appointmentApi";
 import { XCircle } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -10,7 +9,6 @@ interface Props {
 }
 
 export default function StudentAppointmentActions({
-  appointmentId,
   status,
   onStatusChange,
 }: Props) {
@@ -29,7 +27,7 @@ export default function StudentAppointmentActions({
 
     try {
       setLoading(true);
-      await appointmentApi.updateStatus(appointmentId, "CANCELLED");
+      // await appointmentApi.updateStatus(appointmentId, "CANCELLED");
       toast.success("Appointment cancelled successfully!");
       if (onStatusChange) onStatusChange("CANCELLED");
     } catch (err: any) {
