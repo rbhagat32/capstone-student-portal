@@ -25,7 +25,7 @@ export const getUpcomingStudentAppointments = async (req: any, res: Response) =>
     const studentId = req.studentId;
     const DOCTOR_API = process.env.DOCTOR_API_URL;
     const response = await axios.get(
-      `$${DOCTOR_API}}/doctor/appointments/student/${studentId}/upcoming`,
+      `${DOCTOR_API}/doctor/appointments/student/${studentId}/upcoming`,
       { withCredentials: true }
     );
 
